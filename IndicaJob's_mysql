@@ -1,0 +1,44 @@
+create database db_indicaJobs;
+use db_indicaJobs;
+
+CREATE TABLE `tb_usuario` (
+	`id_usuario` bigint AUTO_INCREMENT,
+	`nome` varchar(35) NOT NULL,
+	`pronomes` varchar(35) NOT NULL,
+	`data_nasc` DATE NOT NULL,
+	`empresa` varchar(35) NOT NULL,
+	`email` varchar(50) NOT NULL,
+	`senha` varchar(20) NOT NULL,
+	`nome_usuario` varchar(35) NOT NULL,
+	`bonus` bigint NOT NULL,
+	PRIMARY KEY (`id_usuario`)
+);
+
+CREATE TABLE `tb_tema` (
+	`id_tema` bigint AUTO_INCREMENT,
+	`indicacao` varchar(35) NOT NULL,
+	`pedido` varchar(35) NOT NULL,
+	`informacao` varchar(35) NOT NULL,
+	`palavras_chave` varchar(35) NOT NULL,
+	PRIMARY KEY (`id_tema`)
+);
+
+CREATE TABLE `tb_postagem` (
+	`id_postagem` bigint AUTO_INCREMENT,
+	`texto` longtext NOT NULL,
+	`data` TIMESTAMP NOT NULL,
+	`comentario` longtext NOT NULL,
+	`data_com` TIMESTAMP NOT NULL,
+	`fk_usuario` bigint,
+	`fk_tema` bigint,
+    
+    foreign key (fk_usuario) references tb_usuario(id_usuario),
+    foreign key(fk_tema) references tb_tema(id_tema),
+	PRIMARY KEY (`id_postagem`)
+);
+
+select * from tb_usuario;
+select * from tb_tema;
+select * from tb_postagem;
+
+
