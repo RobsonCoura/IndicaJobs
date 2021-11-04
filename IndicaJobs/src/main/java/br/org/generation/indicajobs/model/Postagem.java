@@ -21,11 +21,11 @@ public class Postagem {
 	private long id_postagem;
 
 	@NotBlank(message = "Campo obrigatório")
-	@Size(min = 5, max = 35)
+	@Size(min = 5, max = 100, message = "O campo título deve conter no mínimo 5 e no máximo 100 caracteres.")
 	private String titulo;
 
 	@NotBlank(message = "Campo obrigatório")
-	@Size(min = 5, max = 10000)
+	@Size(min = 5, max = 10000, message = "O campo texto deve conter no mínimo 5 e no máximo 1000 carcateres.")
 	private String texto;
 
 	@Temporal(TemporalType.TIMESTAMP)
