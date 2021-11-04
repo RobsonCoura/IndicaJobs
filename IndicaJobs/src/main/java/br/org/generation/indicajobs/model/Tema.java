@@ -16,11 +16,11 @@ public class Tema {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id_tema;
 
-	@NotNull (message = "Campo título é obrigatório.")
+	@NotNull (message = "Campo título é obrigatório!")
 	@Size (min = 5, max = 100, message = "O campo título deve conter no mínimo 5 e no máximo 100 caracteres.")
 	private String titulo_tema;
 
-	@NotNull (message = "Campo descrição é obrigatório.")
+	@NotNull (message = "Campo descrição é obrigatório!")
 	@Size (min = 5, max = 1000, message = "O campo descrição deve conter no mínimo 5 e no máximo 1000 caracteres.")
 	private String descricao_tema;
 
