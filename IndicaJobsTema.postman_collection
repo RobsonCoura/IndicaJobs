@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "d1ea01a6-5bf8-4028-8030-bda7c12ab185",
+		"name": "IndicaJobs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "IndicaJobs Tema GetAll",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/tema",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tema"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IndicaJobs Tema Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tituloTema\": \"Solicitação\",\r\n    \"descricaoTema\": \"Postagens feitas por Empresas solicitando indicações de usuários.\",\r\n    \"palavraChave\": \"#Vagas\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tema",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tema"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IndicaJobs Put Tema",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idTema\": 2,\r\n    \"tituloTema\": \"Indicação\",\r\n    \"descricaoTema\": \"Postman bugado\",\r\n    \"palavraChave\": \"#drogas\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tema/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tema",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IndicaJobs Delete Tema",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/tema/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tema",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IndicaJobs Tema getByTitulo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/tema/tituloTema/Indicação",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tema",
+						"tituloTema",
+						"Indicação"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IndicaJobs Tema getById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/tema/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tema",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

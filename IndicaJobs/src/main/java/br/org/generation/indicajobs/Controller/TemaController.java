@@ -46,7 +46,7 @@ public class TemaController {
 	public ResponseEntity<Tema> putTema(@RequestBody Tema tema){
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(tema));
 	}
-	@DeleteMapping
+	@DeleteMapping("/{idTema}")
 	public void deleteTema(@PathVariable Long idTema) {
 		repository.deleteById(idTema);
 	}
