@@ -14,51 +14,51 @@ public class Tema {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id_tema;
+	private long idTema;
 
 	@NotNull (message = "Campo título é obrigatório!")
 	@Size (min = 5, max = 100, message = "O campo título deve conter no mínimo 5 e no máximo 100 caracteres.")
-	private String titulo_tema;
+	private String tituloTema;
 
 	@NotNull (message = "Campo descrição é obrigatório!")
 	@Size (min = 5, max = 1000, message = "O campo descrição deve conter no mínimo 5 e no máximo 1000 caracteres.")
-	private String descricao_tema;
+	private String descricaoTema;
 
-	private String palavra_chave;
+	private String palavraChave;
 
 	public void tema() {
 
 	}
 
-	public long getId_tema() {
-		return id_tema;
+	public long getIdTema() {
+		return idTema;
 	}
 
-	public void setId_tema(long id_tema) {
-		this.id_tema = id_tema;
+	public void setIdTema(long idTema) {
+		this.idTema = idTema;
 	}
 
-	public String getTitulo_tema() {
-		return titulo_tema;
+	public String getTitulotema() {
+		return tituloTema;
 	}
 
-	public void setTitulo_tema(String titulo_tema) {
-		this.titulo_tema = titulo_tema;
+	public void setTituloTema(String tituloTema) {
+		this.tituloTema = tituloTema;
 	}
 
-	public String getDescricao_tema() {
-		return descricao_tema;
+	public String getDescricaoTema() {
+		return descricaoTema;
 	}
 
-	public void setDescricao_tema(String descricao_tema) {
-		this.descricao_tema = descricao_tema;
+	public void setDescricaoTema(String descricaoTema) {
+		this.descricaoTema = descricaoTema;
 	}
 
-	public String getPalavra_chave() {
-		return palavra_chave;
+	public String getPalavraChave() {
+		return palavraChave;
 	}
 
-	public void setPalavra_chave(String palavra_chave) {
-		this.palavra_chave = palavra_chave;
+	public void setPalavraChave(String palavraChave) {
+		this.palavraChave = palavraChave;
 	}
 }
