@@ -23,7 +23,7 @@ public class Usuario {
 	private long idUsuario;
 	
 	@NotNull
-	@Size (min = 3, max = 100, message = "Obrigatório o nome e sobrenome do usuário!")
+	@Size (min = 3, max = 100, message = "Obrigatório o nome e sobrenome do usuário.")
 	private String nome;
 	
 
