@@ -23,6 +23,11 @@ public class Usuario {
 	private long idUsuario;
 	
 	@NotNull
+	@Size (min = 3, max = 100, message = "Obrigatório o nome e sobrenome do usuário!")
+	private String nome;
+	
+
+	@NotNull
 	private String email;
 	
 	@NotNull
@@ -40,7 +45,14 @@ public class Usuario {
 	public void setIdUsuario(long idUsuario) {
 		this.idUsuario = idUsuario;
 	}
+	
+	public String getNome() {
+		return nome;
+	}
 
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 	public String getEmail() {
 		return email;
 	}
