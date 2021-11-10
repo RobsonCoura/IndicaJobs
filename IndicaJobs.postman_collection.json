@@ -20,14 +20,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/tema",
+					"raw": "http://localhost:8080/temas",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"tema"
+						"temas"
 					]
 				}
 			},
@@ -48,14 +48,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/tema",
+					"raw": "http://localhost:8080/temas",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"tema"
+						"temas"
 					]
 				}
 			},
@@ -76,14 +76,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/tema",
+					"raw": "http://localhost:8080/temas",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"tema"
+						"temas"
 					]
 				}
 			},
@@ -95,14 +95,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/tema",
+					"raw": "http://localhost:8080/temas",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"tema"
+						"temas"
 					]
 				}
 			},
@@ -123,14 +123,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/tema",
+					"raw": "http://localhost:8080/temas",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"tema"
+						"temas"
 					]
 				}
 			},
@@ -151,14 +151,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/postagem",
+					"raw": "http://localhost:8080/postagens",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"postagem"
+						"postagens"
 					]
 				}
 			},
@@ -179,14 +179,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/postagem",
+					"raw": "http://localhost:8080/postagens",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"postagem"
+						"postagens"
 					]
 				}
 			},
@@ -207,14 +207,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/postagem",
+					"raw": "http://localhost:8080/postagens",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"postagem"
+						"postagens"
 					]
 				}
 			},
@@ -226,14 +226,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/postagem",
+					"raw": "http://localhost:8080/postagens",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"postagem"
+						"postagens"
 					]
 				}
 			},
@@ -254,14 +254,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/postagem",
+					"raw": "http://localhost:8080/postagens",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"postagem"
+						"postagens"
 					]
 				}
 			},
@@ -273,14 +273,14 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/postagem/1",
+					"raw": "http://localhost:8080/postagens/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"postagem",
+						"postagens",
 						"1"
 					]
 				}

@@ -9,7 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -19,22 +20,22 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Usuario {
 
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long idUsuario;
-	
-	@NotNull
-	@Size (min = 3, max = 100, message = "Obrigatório o nome e sobrenome do usuário.")
-	private String nome;
-	
 
-	@NotNull
+	@NotBlank
+	@Size(min = 3, max = 100, message = "Obrigatório o nome e sobrenome do usuário.")
+	private String nome;
+
+	@NotBlank
+	@Email(message = "Campo e-mail é obrigatório.")
 	private String email;
-	
-	@NotNull
-	@Size (min = 8, max = 20, message = "Obrigatório senha de do mínimo 8 dígitos.")
+
+	@NotBlank
+	@Size(min = 8, max = 20, message = "Obrigatório senha de do mínimo 8 dígitos.")
 	private String senha;
-	
-	@OneToMany (mappedBy = "usuario", cascade = CascadeType.ALL)
+
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("usuario")
 	private List<Postagem> postagem;
 
@@ -45,7 +46,7 @@ public class Usuario {
 	public void setIdUsuario(long idUsuario) {
 		this.idUsuario = idUsuario;
 	}
-	
+
 	public String getNome() {
 		return nome;
 	}
@@ -53,6 +54,7 @@ public class Usuario {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
 	public String getEmail() {
 		return email;
 	}

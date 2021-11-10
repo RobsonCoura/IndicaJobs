@@ -2,6 +2,8 @@ package br.org.generation.indicajobs.Controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,35 +21,47 @@ import br.org.generation.indicajobs.Repository.TemaRepository;
 import br.org.generation.indicajobs.model.Tema;
 
 @RestController
-@RequestMapping("/tema")
-@CrossOrigin(origins="*", allowedHeaders="*")
+@RequestMapping("/temas")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class TemaController {
-	
+
 	@Autowired
 	private TemaRepository repository;
-	
+
 	@GetMapping
 	public ResponseEntity<List<Tema>> getAll() {
 		return ResponseEntity.ok(repository.findAll());
 	}
+
 	@GetMapping("/{idTema}")
 	public ResponseEntity<Tema> getById(@PathVariable Long idTema) {
-		return repository.findById(idTema).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
+		return repository.findById(idTema).map(resp -> ResponseEntity.ok(resp))
+				.orElse(ResponseEntity.notFound().build());
 	}
+
 	@GetMapping("/tituloTema/{tituloTema}")
-	public ResponseEntity<List<Tema>> getByTituloTema(@PathVariable String tituloTema){
-		return ResponseEntity.ok(repository.findAllByTituloTemaContainingIgnoreCase(tituloTema));	
+	public ResponseEntity<List<Tema>> getByTituloTema(@PathVariable String tituloTema) {
+		return ResponseEntity.ok(repository.findAllByTituloTemaContainingIgnoreCase(tituloTema));
 	}
+
 	@PostMapping
 	public ResponseEntity<Tema> postTema(@RequestBody Tema tema) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(tema));
 	}
+
 	@PutMapping
-	public ResponseEntity<Tema> putTema(@RequestBody Tema tema){
-		return ResponseEntity.status(HttpStatus.OK).body(repository.save(tema));
+	public ResponseEntity<Tema> putTema(@Valid @RequestBody Tema tema) {
+		return repository.findById(tema.getIdTema()).map(resp -> ResponseEntity.ok().body(repository.save(tema)))
+				.orElse(ResponseEntity.notFound().build());
 	}
+
 	@DeleteMapping("/{idTema}")
-	public void deleteTema(@PathVariable Long idTema) {
-		repository.deleteById(idTema);
+	public ResponseEntity<?> deleteTema(@PathVariable long idTema) {
+		return repository.findById(idTema)
+				.map(resp -> {
+					repository.deleteById(idTema);
+					return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+				})
+				.orElse(ResponseEntity.notFound().build());
 	}
 }
