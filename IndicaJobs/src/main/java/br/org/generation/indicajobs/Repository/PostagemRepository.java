@@ -10,7 +10,8 @@ import br.org.generation.indicajobs.model.Postagem;
 
 @Repository
 public interface PostagemRepository extends JpaRepository<Postagem, Long> {
-	public List <Postagem> findAllByTituloPostContainingIgnoreCase (String tituloPost);
-	//public List <Postagem> findAllByDataContainingIgnoreCase (Date data);
+
+	public List<Postagem> findAllByTituloPostContainingIgnoreCase(String tituloPost);
+
 
 }

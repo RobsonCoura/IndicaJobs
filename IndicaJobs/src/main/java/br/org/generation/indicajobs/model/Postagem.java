@@ -35,16 +35,15 @@ public class Postagem {
 	private Date data = new java.sql.Date(System.currentTimeMillis());
 
 	private String palavraChavePost;
-	
+
 	@ManyToOne
 	@JsonIgnoreProperties("postagem")
 	private Tema tema;
-	
+
 	@ManyToOne
-	@JsonIgnoreProperties ("postagem")
+	@JsonIgnoreProperties("postagem")
 	private Usuario usuario;
 
-	
 	public void postagem() {
 
 	}
@@ -96,6 +95,7 @@ public class Postagem {
 	public void setTema(Tema tema) {
 		this.tema = tema;
 	}
+
 	public Usuario getUsuario() {
 		return usuario;
 	}
@@ -103,6 +103,5 @@ public class Postagem {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-	
 
 }
