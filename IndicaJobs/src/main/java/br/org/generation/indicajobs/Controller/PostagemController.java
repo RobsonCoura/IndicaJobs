@@ -59,7 +59,7 @@ public class PostagemController {
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(postagem));
 	}
 	
-	@DeleteMapping("/idPost")
+	@DeleteMapping("/{idPost}")
 	public void deletePostagem (@PathVariable long idPost) {
 		repository.deleteById(idPost);
 	}
