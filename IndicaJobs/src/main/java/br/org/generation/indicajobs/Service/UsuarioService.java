@@ -56,10 +56,11 @@ public class UsuarioService {
 		if (usuario.isPresent()) {
 			if (compararSenhas(usuarioLogin.get().getSenha(), usuario.get().getSenha())) {
 
-				usuarioLogin.get().setIdUsuario(usuario.get().getIdUsuario());				
-				usuarioLogin.get().setNome(usuario.get().getNome());
-				usuarioLogin.get().setSenha(usuario.get().getSenha());
-				usuarioLogin.get().setToken(gerarBasicToken(usuarioLogin.get().getEmail(), usuarioLogin.get().getSenha()));
+				String token = gerarBasicToken(usuarioLogin.get().getEmail(), usuarioLogin.get().getSenha());
+                usuarioLogin.get().setIdUsuario(usuario.get().getIdUsuario());
+                usuarioLogin.get().setNome(usuario.get().getNome());
+                usuarioLogin.get().setSenha(usuario.get().getSenha());
+                usuarioLogin.get().setToken(token);
 
 				return usuarioLogin;
 
@@ -85,10 +86,10 @@ public class UsuarioService {
 		return encoder.matches(senhaDigitada, senhaBanco);
 
 	}
-
-	private String gerarBasicToken(String email, String password) {
+	
+	private String gerarBasicToken(String email, String senha) {
 		
-		String tokenBase = email + ":" + password;
+		String tokenBase = email + ":" + senha;
 		byte[] tokenBase64 = Base64.encodeBase64(tokenBase.getBytes(Charset.forName("US-ASCII")));
 		return "Basic " + new String(tokenBase64);
 

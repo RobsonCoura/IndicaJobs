@@ -24,14 +24,14 @@ public class Usuario {
 	private long idUsuario;
 
 	@NotBlank
-	@Size(min = 3, max = 100, message = "Obrigatório o nome e sobrenome do usuário.")
+	@Size(max = 100, message = "Obrigatório o nome e sobrenome do usuário.")
 	private String nome;
 
 	@NotBlank
 	@Email(message = "Campo e-mail é obrigatório.")
 	private String email;
 
-	@NotBlank
+	
 	private String senha;
 
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
