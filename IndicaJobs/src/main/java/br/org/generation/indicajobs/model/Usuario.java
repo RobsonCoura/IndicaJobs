@@ -32,7 +32,6 @@ public class Usuario {
 	private String email;
 
 	@NotBlank
-	@Size(min = 8, max = 20, message = "Obrigatório senha de do mínimo 8 dígitos.")
 	private String senha;
 
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
