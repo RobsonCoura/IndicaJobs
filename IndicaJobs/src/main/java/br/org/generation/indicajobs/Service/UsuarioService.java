@@ -56,11 +56,18 @@ public class UsuarioService {
 			if (compararSenhas(usuarioLogin.get().getSenha(), usuario.get().getSenha())) {
 
 				String token = gerarBasicToken(usuarioLogin.get().getEmail(), usuarioLogin.get().getSenha());
+<<<<<<< HEAD
 
 				usuarioLogin.get().setIdUsuario(usuario.get().getIdUsuario());
 				usuarioLogin.get().setNome(usuario.get().getNome());
 				usuarioLogin.get().setSenha(usuario.get().getSenha());
 				usuarioLogin.get().setToken(token);
+=======
+                usuarioLogin.get().setIdUsuario(usuario.get().getIdUsuario());
+                usuarioLogin.get().setNome(usuario.get().getNome());
+                usuarioLogin.get().setSenha(usuario.get().getSenha());
+                usuarioLogin.get().setToken(token);
+>>>>>>> 87dbe2c933a4f47cbf5c880724371fb4bc9f5f7b
 
 				return usuarioLogin;
 
@@ -80,9 +87,16 @@ public class UsuarioService {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		return encoder.matches(senhaDigitada, senhaBanco);
 	}
+<<<<<<< HEAD
 
 	private String gerarBasicToken(String email, String password) {
 		String tokenBase = email + ":" + password;
+=======
+	
+	private String gerarBasicToken(String email, String senha) {
+		
+		String tokenBase = email + ":" + senha;
+>>>>>>> 87dbe2c933a4f47cbf5c880724371fb4bc9f5f7b
 		byte[] tokenBase64 = Base64.encodeBase64(tokenBase.getBytes(Charset.forName("US-ASCII")));
 		return "Basic " + new String(tokenBase64);
 	}

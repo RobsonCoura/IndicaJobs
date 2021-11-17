@@ -12,6 +12,10 @@ import br.org.generation.indicajobs.model.Usuario;
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
 	public Optional<Usuario> findByEmail(String email);
+<<<<<<< HEAD
 	
+=======
+	public List<Usuario> findByIdUsuario (long IdUsuario);
+>>>>>>> 87dbe2c933a4f47cbf5c880724371fb4bc9f5f7b
 	public List<Usuario> findAllByNomeContainingIgnoreCase (String nome);
 }
