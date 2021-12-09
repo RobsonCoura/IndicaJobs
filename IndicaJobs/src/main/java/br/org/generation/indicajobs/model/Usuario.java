@@ -34,8 +34,13 @@ public class Usuario {
 	@Email(message = "O campo deve ser preenchido com um e-mail válido.")
 	private String email;
 
-	
+	@NotBlank (message = "Senha obrigatória!")
+	@Size(min = 8, message = "O campo deve conter mais de 8 caracteres.")
 	private String senha;
+	
+	private String foto;
+	
+	private String tipo;
 
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("usuario")
@@ -81,4 +86,20 @@ public class Usuario {
 		this.postagem = postagem;
 	}
 
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+	
 }
